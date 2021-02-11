@@ -1,0 +1,24 @@
+body {
+    
+}
+
+@keyframes loader {
+    0% {
+        opacity: 0;
+    }
+    20%{
+        opacity: .10;
+    }
+    40%{
+        opacity: .33;
+    }
+    60%{
+        opacity: .66;
+    }
+    80%{
+        opacity: .9;
+    }
+    100%{
+        opacity: 1;
+    }
+}

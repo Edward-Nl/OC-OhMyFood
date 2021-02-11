@@ -3,8 +3,13 @@
     height: 260px;
     object-fit: cover;
 }
-.main-carte{
+.section-menu{
     background: $background;
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 .div-title{
     display: flex;
@@ -19,34 +24,126 @@
 }
 
 .carte {
+    ul {
+        @media (min-width: 650px){
+            width: 80%;
+        }
+    }
+    @media (min-width: 650px){
+        display: flex;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    &__h2 {
+    margin-top: 45px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    @media (min-width: 650px){
+        width: 15%;
+    }
+    span {
+        border-bottom: 5px solid $couleur-tertiaire;
+        padding-bottom: 3px;
+        }
+    }
     &__menu {
         background: white;
-        height: 68px;
+        cursor: pointer;
         width: 90%;
         margin: auto;
         margin-bottom: 15px;
-        line-height: 10px;
         border-radius: 20px;
         box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
-        padding: 15px;
-        box-sizing: border-box;
-    }
-    &__h2 {
-        margin-top: 45px;
-        margin-bottom: 25px;
-        margin-left: 25px;
-        span {
-            border-bottom: 5px solid $couleur-tertiaire;
-            padding-bottom: 3px;
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: 650px){
+            width: 75%;
         }
     }
-    &__h3 {
+    &__h3, &__p {
         margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    &__div{
+        margin: 15px auto 11px 15px;
+        min-width: 60%;
+    }
+    &__prix{
+        display: flex;
+        align-items: flex-end;
+        margin: auto 15px 11px;
+        transform: translateX(0);
     }
 }
+
+
+
 .btn-violet__carte {
     margin: 45px auto;
 }
 .btn-carte {
     display: flex;
+}
+.anim {
+    width: 0;
+    height: auto;
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    font-size: 1.6em;
+    display: flex;
+    background-color: $couleur-tertiaire;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.carte__menu {
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    &:hover > .anim {
+        animation: anim-menu 600ms 100ms both;
+        animation-play-state: running;
+    }
+    &:hover .fa-check-circle {
+    transform: rotate(360deg);
+    transition: all 500ms 350ms;
+    } 
+}
+
+.fa-check-circle{
+    transform: rotate(0deg);
+    color: white;
+}
+
+.carte-1{
+    animation: app-menu 300ms both;
+}
+.carte-2{
+    animation: app-menu 300ms 100ms both;
+}
+.carte-3{
+    animation: app-menu 300ms 200ms both;
+}
+.carte-4{
+    animation: app-menu 300ms 300ms both;
+}
+.carte-5{
+    animation: app-menu 300ms 400ms both;
+}
+.carte-6{
+    animation: app-menu 300ms 500ms both;
+}
+.carte-7{
+    animation: app-menu 300ms 600ms both;
+}
+.carte-8{
+    animation: app-menu 300ms 700ms both;
+}
+.carte-9{
+    animation: app-menu 300ms 800ms both;
 }
