@@ -1,5 +1,5 @@
-@charset "UTF-8";
 body {
+  background: #f6f6f6;
   font-family: Roboto;
   margin: 0;
 }
@@ -34,24 +34,69 @@ a {
     opacity: 1;
   }
 }
+.loader {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: wait;
+  background-color: #f6f6f6;
+  animation: loader 3s both;
+}
+
+.barre {
+  width: 10px;
+  height: 180px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 150px;
+  border: 1px solid white;
+  border-radius: 15px;
+  animation: barre 750ms both infinite;
+  animation-direction: alternate;
+}
+
+.barre-1 {
+  background: #ae80e5;
+}
+
+.barre-2 {
+  background: #fface8;
+  animation-delay: 150ms;
+}
+
+.barre-3 {
+  background: #c1ede2;
+  animation-delay: 300ms;
+}
+
 @keyframes loader {
   0% {
-    opacity: 0;
+    opacity: 1;
   }
-  20% {
-    opacity: 0.1;
+  75% {
+    opacity: 1;
   }
-  40% {
-    opacity: 0.33;
-  }
-  60% {
-    opacity: 0.66;
-  }
-  80% {
-    opacity: 0.9;
+  99% {
+    opacity: 0.75;
+    z-index: 1000;
   }
   100% {
-    opacity: 1;
+    opacity: 0;
+    z-index: -55555;
+  }
+}
+@keyframes barre {
+  0% {
+    transform: scaleY(0.3);
+  }
+  100% {
+    transform: scaleY(1);
   }
 }
 .header-principal {
@@ -175,6 +220,7 @@ button {
 .fctn {
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
 .btn-fct {
@@ -196,6 +242,7 @@ button {
 @media (min-width: 650px) {
   .btn-fct {
     width: 70%;
+    max-width: 700px;
   }
 }
 .btn-fct__div {
@@ -231,12 +278,15 @@ button {
   .div-figure {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 }
 
 @media (min-width: 650px) {
   .lien-figure {
     width: 45%;
+    max-width: 550px;
     margin: auto;
   }
 }
@@ -288,31 +338,16 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 25px;
+  width: 30px;
+  margin-right: 10px;
   font-size: 1.6em;
-  transition: background-color 2s;
-  position: relative;
-  z-index: 1;
+  font-weight: 400;
 }
-.figure-restau__figcaption .fa-heart:hover::after {
-  opacity: 1;
-}
-.figure-restau__figcaption .fa-heart::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to top, #FF79DA 0%, #9356DC 100%);
-  opacity: 0;
-  z-index: 5;
-  transition: opacity 1s;
+.figure-restau__figcaption .fa-heart:hover {
+  font-weight: 600;
+  background: linear-gradient(to top, #FF79DA 15%, #9356DC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .figure-restau__figcaptionh3 {
   margin: 0;
@@ -321,10 +356,24 @@ button {
   margin-top: 5px;
 }
 
+@media (min-width: 1200px) {
+  .main-carte {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+
 .img-carte {
   width: 100%;
   height: 260px;
   object-fit: cover;
+}
+@media (min-width: 1200px) {
+  .img-carte {
+    width: 35%;
+    height: auto;
+  }
 }
 
 .section-menu {
@@ -334,6 +383,17 @@ button {
   margin-bottom: -50px;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
+}
+@media (min-width: 1200px) {
+  .section-menu {
+    width: 65%;
+    top: 0;
+    left: -50px;
+    margin-bottom: 0;
+    margin-right: -50px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 50px;
+  }
 }
 
 .div-title {
@@ -372,7 +432,7 @@ button {
   content: "";
   display: block;
   border-bottom: 5px solid #99E2D0;
-  width: 50px;
+  width: 40px;
   height: 5px;
 }
 @media (min-width: 650px) {

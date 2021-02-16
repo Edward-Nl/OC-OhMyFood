@@ -74,6 +74,7 @@ button{
 .fctn{
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 .btn-fct{
     background-color: #f6f6f6;
@@ -92,6 +93,7 @@ button{
     box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
     @media (min-width: 650px){
         width: 70%;
+        max-width: 700px;
     }
     &__div{
         display: flex;
@@ -133,11 +135,14 @@ button{
     @media (min-width: 650px){
         display: flex;
         flex-wrap: wrap;
+        margin-left: 40px;
+        margin-right: 40px;
     }
 }
 .lien-figure{
     @media (min-width: 650px){
         width: 45%;
+        max-width: 550px;
         margin: auto;
     }
 }
@@ -185,32 +190,15 @@ button{
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 25px;
+            width: 30px;
+            margin-right: 10px;
             font-size: 1.6em;
-            transition: background-color 2s;
-            position: relative;
-            z-index: 1;
-            &:hover {
-                &::after{
-                    opacity: 1;
-                }
-            }
-            &::after{
-                content: "\f004";
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: linear-gradient(to top, $couleur-secondaire 0%, $couleur-principal 100%);
-                opacity: 0;
-                z-index: 5;
-                transition: opacity 1s;
+            font-weight: 400;
+            &:hover{
+                font-weight: 600;
+                background: linear-gradient(to top, $couleur-secondaire 15%, $couleur-principal 100%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                display: flex;
-                justify-content: center;
-                align-items: center;
             }
         }
     }

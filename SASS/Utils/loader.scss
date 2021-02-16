@@ -1,24 +1,65 @@
-body {
-    
+.loader{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: wait;
+    background-color: $background;
+    animation: loader 3s both;
+}
+
+.barre {
+    width: 10px;
+    height: 180px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 150px;
+    border: 1px solid white;
+    border-radius: 15px;
+    animation: barre 750ms both infinite;
+    animation-direction: alternate;
+  }
+
+.barre-1 {
+    background: lighten($couleur-principal, 10%);
+}
+.barre-2 {
+    background: lighten($couleur-secondaire, 10%);
+    animation-delay: 150ms;
+}
+.barre-3 {
+    background: lighten($couleur-tertiaire, 10%);
+    animation-delay: 300ms;
 }
 
 @keyframes loader {
-    0% {
-        opacity: 0;
-    }
-    20%{
-        opacity: .10;
-    }
-    40%{
-        opacity: .33;
-    }
-    60%{
-        opacity: .66;
-    }
-    80%{
-        opacity: .9;
-    }
-    100%{
+    0%{
         opacity: 1;
     }
+    75%{
+        opacity: 1;
+    }
+    99%{
+        opacity: .75;
+        z-index: 1000;
+    }
+    100%{
+        opacity: 0;
+        z-index: -55555;
+    }
 }
+
+
+@keyframes barre {
+    0%{
+      transform: scaleY(0.3);
+    }
+    100%{
+      transform: scaleY(1);
+    }
+  }
