@@ -35,16 +35,22 @@
         margin-right: 5%;
     }
     &__h2 {
-    margin-top: 45px;
-    margin-bottom: 25px;
-    margin-left: 25px;
+        display: inline-block;
+        margin-top: 45px;
+        margin-bottom: 25px;
+        margin-left: 25px;
+        padding-bottom: 5px;
+        position: relative;
+        &::after{
+            content: "";
+            display: block;
+            border-bottom: 5px solid $couleur-tertiaire;
+            width: 50px;
+            height: 5px;
+    }
     @media (min-width: 650px){
         width: 15%;
     }
-    span {
-        border-bottom: 5px solid $couleur-tertiaire;
-        padding-bottom: 3px;
-        }
     }
     &__menu {
         background: white;
@@ -146,4 +152,7 @@
 }
 .carte-9{
     animation: app-menu 300ms 800ms both;
+}
+.carte-10{
+    animation: app-menu 300ms 900ms both;
 }

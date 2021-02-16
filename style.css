@@ -54,7 +54,7 @@ a {
     opacity: 1;
   }
 }
-header {
+.header-principal {
   height: 65px;
   display: flex;
   box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.15);
@@ -64,13 +64,13 @@ header {
   z-index: 50;
   justify-content: center;
 }
-header i {
+.header-principal i {
   position: absolute;
   left: 20px;
   top: 25px;
   font-size: 1.5em;
 }
-header img {
+.header-principal img {
   width: 165px;
   height: 30px;
   margin: auto;
@@ -78,13 +78,13 @@ header img {
   display: flex;
 }
 
-footer {
+.footer-principal {
   background-color: #353535;
   color: white;
   padding: 25px;
   padding-right: 0;
 }
-footer h3 {
+.footer-principal h3 {
   font-family: Shrikhand;
   font-weight: normal;
 }
@@ -361,18 +361,24 @@ button {
   }
 }
 .carte__h2 {
+  display: inline-block;
   margin-top: 45px;
   margin-bottom: 25px;
   margin-left: 25px;
+  padding-bottom: 5px;
+  position: relative;
+}
+.carte__h2::after {
+  content: "";
+  display: block;
+  border-bottom: 5px solid #99E2D0;
+  width: 50px;
+  height: 5px;
 }
 @media (min-width: 650px) {
   .carte__h2 {
     width: 15%;
   }
-}
-.carte__h2 span {
-  border-bottom: 5px solid #99E2D0;
-  padding-bottom: 3px;
 }
 .carte__menu {
   background: white;
@@ -483,6 +489,10 @@ button {
 
 .carte-9 {
   animation: app-menu 300ms 800ms both;
+}
+
+.carte-10 {
+  animation: app-menu 300ms 900ms both;
 }
 
 /*# sourceMappingURL=style.css.map */
