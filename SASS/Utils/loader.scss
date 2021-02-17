@@ -1,4 +1,4 @@
-.loader{
+.chargement{
     position: fixed;
     z-index: 1000;
     top: 0;
@@ -10,30 +10,37 @@
     align-items: center;
     cursor: wait;
     background-color: $background;
-    animation: loader 3s both;
+    animation: loader 3000ms both;
 }
 
-.barre {
-    width: 10px;
-    height: 180px;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 150px;
-    border: 1px solid white;
-    border-radius: 15px;
-    animation: barre 750ms both infinite;
-    animation-direction: alternate;
+.spin-1{
+    border: 1px solid #f8f8f8;
+    border-left: 8px solid $couleur-principal;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    @include display;
+    animation: spin 3s backwards infinite;
   }
-
-.barre-1 {
-    background: lighten($couleur-principal, 10%);
-}
-.barre-2 {
-    background: lighten($couleur-secondaire, 10%);
-    animation-delay: 150ms;
-}
-.barre-3 {
-    background: lighten($couleur-tertiaire, 10%);
-    animation-delay: 300ms;
-}
+  .spin-2{
+    border: 1px solid #f8f8f8;
+    border-left: 8px solid $couleur-secondaire;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    @include display;
+    animation: spin 3s 200ms backwards infinite;
+  }
+  .spin-3{
+    border: 1px solid #f8f8f8;
+    border-left: 8px solid $couleur-tertiaire;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    @include display;
+    animation: spin 3s 400ms backwards infinite;
+  }
+  
+  
+ 
 
