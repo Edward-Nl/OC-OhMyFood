@@ -1,16 +1,14 @@
-.ville{
+.ville{     // localisation
     background-color: #eaeaea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include display;
     height: 50px;
     font-weight: bold;
     i{
         margin-right: 15px;
     }
 }
-.intro{
-    background-color: #f6f6f6;
+.intro{     // description et 1er bouton 
+    background-color: $background;
     height: 287px;
     display: flex;
     flex-direction: column;
@@ -26,18 +24,14 @@
         margin-bottom: 35px;
     }
 }
-button{
-    outline: none;
-    cursor: pointer;
-}
-.btn-violet {
+.btn-violet {    // bouton violet 
     width: 218px;
     height: 50px;
     background: $degrade;
     color: white;
     font-family: Roboto;
     border: none;
-    border-radius: 25px;
+    border-radius: $radius;
     font-size: 16px;
     box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.20);
     position: relative;
@@ -59,7 +53,7 @@ button{
         opacity: 0;
         z-index: -1;
         transition: all 550ms;
-        border-radius: 25px;
+        border-radius: $radius;
     }
 }
 .h2-accueil {
@@ -70,142 +64,127 @@ button{
         margin-top: 0;
     }
 }
-
 .fctn{
     display: flex;
     flex-direction: column;
     background-color: white;
-}
-.btn-fct{
-    background-color: #f6f6f6;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border: none;
-    width: 85%;
-    height: 75px;
-    margin: auto;
-    margin-bottom: 25px;
-    border-radius: 30px;
-    padding: 0;
-    font-family: Roboto;
-    font-size: 16px;
-    box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
-    @media (min-width: 650px){
-        width: 70%;
-        max-width: 700px;
-    }
-    &__div{
+    .btn-fct{
+        background-color: $background;
+        cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;
-        background-color: $couleur-principal;
-        color: white;
-        margin-right: 25px;
-        width: 25px;
-        height: 25px;
-        border-radius: 20px;
-        margin-left: -10px;
-        
+        justify-content: flex-start;
+        border: none;
+        width: 85%;
+        height: 75px;
+        margin: auto;
+        margin-bottom: 25px;
+        border-radius: 30px;
+        padding: 0;
+        font-family: Roboto;
+        font-size: 16px;
+        box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
+        @media (min-width: 650px){
+            width: 70%;
+            max-width: 700px;
         }
-        &__p{
-            font-weight: bold;
-            i{
-                margin-right: 15px;
+        &__nombre{
+            @include display;
+            background-color: $couleur-principal;
+            color: white;
+            margin-right: 25px;
+            width: 25px;
+            height: 25px;
+            border-radius: 20px;
+            margin-left: -10px;
+            
             }
-        }
+            &__p{
+                font-weight: bold;
+                i{
+                    margin-right: 15px;
+                }
+            }
+    }
+}
+.icon-gris{
+    font-size: 1.2em;
+    color: lighten(black, 50);
 }
 .fa-store{
     color: $couleur-principal;
+    font-size: 1.2em;
 }
-
-
-
-
-
-
-
-
 .section-restau{
-    background-color: #f6f6f6;
+    background-color: $background;
     padding-top: 60px;
     padding-bottom: 60px;
-}
-.div-figure{
-    @media (min-width: 650px){
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-}
-.lien-figure{
-    @media (min-width: 650px){
-        width: 45%;
-        max-width: 550px;
-        margin: auto;
-    }
-}
-
-.figure-restau{
-    position: relative;
-    width: 85%;
-    height: 250px;
-    border-radius: 20px;
-    background-color: white;
-    margin: auto;
-    margin-bottom: 18px;
-    box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
-    @media (min-width: 650px){
-        margin: 0;
-        margin-bottom: 25px;
-        width: 100%;
-        height: 300px;
-    }
-    span {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: $couleur-tertiaire;
-        color: darken($couleur-tertiaire, 45);
-        padding: 4px 10px;
-    }
-    &__img{
-        width: 100%;
-        height: calc(100% - 77px);
-        object-fit: cover;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-    }
-    &__figcaption{
-        height: 77px;
-        display: flex;
-        div{
+    .div-figure{
+        @media (min-width: 650px){
             display: flex;
-            flex-direction: column;
-            width: 80%;
-            padding: 15px;
+            flex-wrap: wrap;
+            margin-left: 40px;
+            margin-right: 40px;
         }
-        .fa-heart {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            margin-right: 10px;
-            font-size: 1.6em;
-            font-weight: 400;
-            &:hover{
-                font-weight: 600;
-                background: linear-gradient(to top, $couleur-secondaire 15%, $couleur-principal 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+        .lien-figure{
+            @media (min-width: 650px){
+                width: 45%;
+                max-width: 550px;
+                margin: auto;
+            }
+            .figure-restau{
+                @include carterestau;
+                @media (min-width: 650px){
+                    margin: 0;
+                    margin-bottom: 25px;
+                    width: 100%;
+                    height: 300px;
+                }
+                span {
+                    position: absolute;
+                    top: 20px;
+                    right: 20px;
+                    background: $couleur-tertiaire;
+                    color: darken($couleur-tertiaire, 45);
+                    padding: 4px 10px;
+                }
+                &__img{
+                    width: 100%;
+                    height: calc(100% - 77px);
+                    object-fit: cover;
+                    border-top-left-radius: $radius;
+                    border-top-right-radius: $radius;
+                }
+                &__figcaption{
+                    height: 77px;
+                    display: flex;
+                    div{
+                        display: flex;
+                        flex-direction: column;
+                        width: 80%;
+                        padding: 15px;
+                    }
+                    .fa-heart {
+                        @include display;
+                        width: 30px;
+                        margin-right: 10px;
+                        font-size: 1.6em;
+                        font-weight: 400;
+                        &:hover{
+                            font-weight: 600;
+                            background: linear-gradient(to top, $couleur-secondaire 15%, $couleur-principal 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    }
+                }
+                &__figcaptionh3{
+                    margin: 0;
+                }
+                p{
+                    margin-top: 5px;
+                }
             }
         }
-    }
-    &__figcaptionh3{
-        margin: 0;
-    }
-    p{
-        margin-top: 5px;
     }
 }

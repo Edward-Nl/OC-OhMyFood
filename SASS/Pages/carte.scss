@@ -14,7 +14,7 @@
         height: auto;
     }
 }
-.section-menu{
+.section-menu{  // contient toute la page sauf l'image
     background: $background;
     position: relative;
     top: -50px;
@@ -31,59 +31,66 @@
         border-bottom-left-radius: 50px;
     }
 }
-.div-title{
+.header-carte{   // nom de restau
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin: auto;
     width: 88%;
     font-size: 1.3em;
+    h1 {
+        font-weight: 500;
+    }
     .fa-heart {
         font-size: 1.4em;
     }
 }
 
-.carte {
-    ul {
-        @media (min-width: 650px){
-            width: 80%;
-        }
-    }
+.carte {   // contient les plats
     @media (min-width: 650px){
         display: flex;
         margin-left: 5%;
         margin-right: 5%;
     }
-    &__h2 {
+    &__h2 { // entrée plat ...
         display: inline-block;
         margin-top: 45px;
         margin-bottom: 25px;
         margin-left: 25px;
-        padding-bottom: 5px;
         position: relative;
-        &::after{
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 1.2em;
+        @media (min-width: 650px){
+            width: 15%;
+        }
+        &::after{   // trait vert
             content: "";
             display: block;
             border-bottom: 5px solid $couleur-tertiaire;
-            width: 40px;
+            width: 50px;
             height: 5px;
+        }
     }
-    @media (min-width: 650px){
-        width: 15%;
+    ul {
+        margin-top: 0;
+        @media (min-width: 650px){
+            width: 80%;
+            margin-top: 25px;
+        }
     }
-    }
-    &__menu {
-        background: white;
-        cursor: pointer;
-        width: 90%;
-        margin: auto;
-        margin-bottom: 15px;
-        border-radius: 20px;
-        box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
-        display: flex;
-        justify-content: space-between;
+    &__menu {     // carte de plats
+        @include cartemenu;
         @media (min-width: 650px){
             width: 75%;
+        }
+        &:hover > .anim {  //apparition de la div verte 
+            animation: anim-menu 600ms 100ms both;
+            animation-play-state: running;
+        }
+        &:hover .fa-check-circle {   // rotation de l'icon
+        transform: rotate(360deg);
+        transition: all 500ms 350ms;
         }
     }
     &__h3, &__p {
@@ -92,7 +99,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
     }
-    &__div{
+    &__div{  // contient les h3 et p
         margin: 15px auto 11px 15px;
         min-width: 60%;
     }
@@ -101,52 +108,32 @@
         align-items: flex-end;
         margin: auto 15px 11px;
         transform: translateX(0);
+        font-weight: bold;
+    }
+    .anim {
+        width: 0;
+        height: auto;
+        transform: scaleX(0);
+        transform-origin: 100% 50%;
+        font-size: 1.6em;
+        @include display;
+        background-color: $couleur-tertiaire;
+        color: white;
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
     }
 }
-
-
-
-.btn-violet__carte {
-    margin: 45px auto;
-}
-.btn-carte {
-    display: flex;
-}
-.anim {
-    width: 0;
-    height: auto;
-    transform: scaleX(0);
-    transform-origin: 100% 50%;
-    font-size: 1.6em;
-    display: flex;
-    background-color: $couleur-tertiaire;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-.carte__menu {
-    transform-origin: top;
-    transform: scaleY(0);
-    opacity: 0;
-    &:hover > .anim {
-        animation: anim-menu 600ms 100ms both;
-        animation-play-state: running;
-    }
-    &:hover .fa-check-circle {
-    transform: rotate(360deg);
-    transition: all 500ms 350ms;
-    } 
-}
-
 .fa-check-circle{
     transform: rotate(0deg);
     color: white;
 }
-
-.carte-1{
+.btn-violet__carte {   // btn commande
+    margin: 45px auto;
+}
+.footer-carte {
+    display: flex;
+}
+.carte-1{    //decalage pour l'apparition en cascade des plats 
     animation: app-menu 300ms both;
 }
 .carte-2{

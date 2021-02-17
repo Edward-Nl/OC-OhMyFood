@@ -3,11 +3,14 @@
 
 @import
     'Utils/variables.scss',
-    'Utils/loader.scss';
+    'Utils/loader.scss',
+    'Utils/Keyframes.scss',
+    'Utils/Mixins.scss';
 
 @import
     'Layouts/header.scss',
     'Layouts/footer.scss';
+    
 @import
     'Pages/accueil.scss',
     'Pages/carte.scss';

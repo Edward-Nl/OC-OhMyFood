@@ -1,0 +1,29 @@
+@mixin display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin cartemenu {
+    background: white;
+    cursor: pointer;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 15px;
+    border-radius: $radius;
+    box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
+    display: flex;
+    justify-content: space-between;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+}
+@mixin carterestau {
+    position: relative;
+    width: 85%;
+    height: 250px;
+    border-radius: $radius;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 18px;
+    box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
+}

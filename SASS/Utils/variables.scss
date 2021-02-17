@@ -1,30 +1,11 @@
 $couleur-principal: #9356DC;
 $couleur-secondaire: #FF79DA;
 $couleur-tertiaire: #99E2D0;
+
 $bgc-footer: #353535;
 $background: #f6f6f6;
-$degrade: linear-gradient(to right bottom, $couleur-secondaire 0%, $couleur-principal 100%);
 
+$degrade: linear-gradient(to right bottom, $couleur-secondaire 0%, $couleur-principal 100%);
 $degrade-light: linear-gradient(to right bottom, lighten($couleur-secondaire, 5%) 0%, lighten($couleur-principal, 5%) 100%);
 
-@keyframes anim-menu {
-    0% {
-        transform: scaleX(0);
-        width: 0;
-    }
-    100% {
-        transform: scaleX(1);
-        width: 15%;
-    }
-}
-@keyframes app-menu {
-    0%{
-        transform: scaleY(0);
-        opacity: 0;
-    }
-    100%{
-        transform: scaleY(1);
-        opacity: 1;
-    } 
-}
-
+$radius: 25px;

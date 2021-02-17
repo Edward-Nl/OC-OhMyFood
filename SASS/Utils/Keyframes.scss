@@ -1,0 +1,44 @@
+@keyframes anim-menu {    //apparition des check sur les plats
+    0% {
+        transform: scaleX(0);
+        width: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        width: 15%;
+    }
+}
+@keyframes app-menu {     // apparition des plats en cascade sur les cartes 
+    0%{
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scaleY(1);
+        opacity: 1;
+    } 
+}
+@keyframes loader {  //fond du loader
+    0%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    99%{
+        opacity: .75;
+        z-index: 1000;
+    }
+    100%{
+        opacity: 0;
+        z-index: -55555;
+    }
+}
+@keyframes barre {   // animation du loader
+    0%{
+      transform: scaleY(0.3);
+    }
+    100%{
+      transform: scaleY(1);
+    }
+  }
