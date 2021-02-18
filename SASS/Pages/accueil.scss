@@ -170,11 +170,32 @@
                         margin-right: 10px;
                         font-size: 1.6em;
                         font-weight: 400;
+                        z-index: 1;
+                        opacity: 1;
+                        position: relative;
+                        transition: color 1s;
                         &:hover{
+                            color: white;
+                        }
+                        &:hover {
+                            &::after{
+                                opacity: 1;
+                                z-index: 2;
+                            }
+                        }
+                        &::after{
+                            content: "\f004";
                             font-weight: 600;
+                            @include display;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            opacity: 0;
+                            z-index: -1;
                             background: linear-gradient(to top, $couleur-secondaire 15%, $couleur-principal 100%);
                             -webkit-background-clip: text;
                             -webkit-text-fill-color: transparent;
+                            transition: all 1s;
                         }
                     }
                 }

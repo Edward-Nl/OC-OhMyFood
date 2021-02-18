@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background: #f6f6f6;
   font-family: Roboto;
@@ -364,12 +365,33 @@ li {
   margin-right: 10px;
   font-size: 1.6em;
   font-weight: 400;
+  z-index: 1;
+  opacity: 1;
+  position: relative;
+  transition: color 1s;
 }
 .section-restau .div-figure .lien-figure .figure-restau__figcaption .fa-heart:hover {
+  color: white;
+}
+.section-restau .div-figure .lien-figure .figure-restau__figcaption .fa-heart:hover::after {
+  opacity: 1;
+  z-index: 2;
+}
+.section-restau .div-figure .lien-figure .figure-restau__figcaption .fa-heart::after {
+  content: "";
   font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  z-index: -1;
   background: linear-gradient(to top, #FF79DA 15%, #9356DC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  transition: all 1s;
 }
 .section-restau .div-figure .lien-figure .figure-restau__figcaptionh3 {
   margin: 0;
