@@ -27,3 +27,16 @@
     margin-bottom: 18px;
     box-shadow: 1px 1px 15px 0px rgba(0,0,0,0.15);
 }
+@mixin aftercoeur {
+    content: "\f004";
+    font-weight: 600;
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: -1;
+    background: linear-gradient(to top, $couleur-secondaire 15%, $couleur-principal 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 1s;
+}

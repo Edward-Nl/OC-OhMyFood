@@ -22,7 +22,7 @@
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
     @media (min-width: 1200px) {
-        width: 65%;
+        width: calc(65% + 50px);
         top: 0;
         left: -50px;
         margin-bottom: 0;
